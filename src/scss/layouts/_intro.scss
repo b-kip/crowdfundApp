@@ -1,0 +1,31 @@
+.page {
+  &-intro {
+    --flow-spacer: 1.5rem;
+    text-align: center;
+    margin-top: -4rem;
+    position: relative;
+    z-index: 1;
+
+    &::before {
+      content: '';
+      position: absolute;
+      display: inline-block;
+      top: 0;
+      background-image: url('../../assets/images/logo-mastercraft.svg');
+      background-size: contain;
+      height: 56px;
+      width: 56px;
+      transform: translate(-50%, -50%);
+    }
+
+    &__title {
+      line-height: 1.1;
+      margin-top: 1.65rem;
+    }
+
+    .call-to-action {
+      display: flex;
+      justify-content: space-between;
+    }
+  }
+}

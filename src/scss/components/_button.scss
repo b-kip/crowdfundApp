@@ -1,0 +1,21 @@
+.btn {
+  display: inline-block;
+  cursor: pointer;
+  color: var(--clr-white);
+  background: var(--clr-primary-light);
+  border: none;
+  border-radius: 100vh;
+  padding: 1em 2em;
+  font-weight: var(--fw-bold);
+  // font-size: var(--fs-300);
+  text-decoration: none;
+
+  &--dark {
+    background-color: var(--clr-gray-600);
+  }
+
+  &:hover,
+  &:focus {
+    background-color: var(--clr-primary-dark);
+  }
+}

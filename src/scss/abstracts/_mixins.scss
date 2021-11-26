@@ -1,0 +1,9 @@
+@use 'sass:selector';
+
+@mixin prepend-selector($selector) {
+  // @debug $selector;
+  // @debug #{selector.unify($selector, &)};
+  @at-root #{selector.unify($selector, &)} {
+    @content;
+  }
+}

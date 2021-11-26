@@ -1,0 +1,67 @@
+.burger-menu {
+  --menu-animation-duration: 200ms;
+  --menu-animation-timing: ease-out;
+  color: var(--clr-white);
+  position: relative;
+  width: 18px;
+  height: 15px;
+  cursor: pointer;
+
+  &__item {
+    display: block;
+    position: absolute;
+    width: 18px;
+    border-top: 3px solid var(--clr-white);
+    transform-origin: 50% 50%;
+    transition: transform var(--menu-animation-duration)
+      var(--menu-animation-timing);
+
+    &--top {
+      top: 0;
+
+      .active & {
+        animation: burger-open-top var(--menu-animation-duration)
+          var(--menu-animation-duration) forwards;
+      }
+    }
+
+    &--middle {
+      top: 6px;
+      opacity: 1;
+
+      .active & {
+        opacity: 0;
+        transition: transform var(--menu-animation-duration)
+            var(--menu-animation-timing),
+          opacity 0ms linear var(--menu-animation-duration) / 2;
+      }
+    }
+
+    &--bottom {
+      top: 12px;
+
+      .active & {
+        animation: burger-open-bot var(--menu-animation-duration)
+          var(--menu-animation-duration) forwards;
+      }
+    }
+  }
+}
+
+@keyframes burger-open-top {
+  50% {
+    transform: translate3d(0, 6px, 0);
+  }
+  100% {
+    transform: translate3d(0, 6px, 0) rotate(45deg);
+  }
+}
+
+@keyframes burger-open-bot {
+  50% {
+    transform: translate3d(0, -6px, 0);
+  }
+  100% {
+    transform: translate3d(0, -6px, 0) rotate(-45deg);
+  }
+}

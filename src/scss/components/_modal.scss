@@ -1,0 +1,63 @@
+@use '../abstracts' as *;
+
+.modal {
+  --flow-spacer: 2rem;
+  background-color: var(--clr-white);
+  position: absolute;
+  z-index: 1010;
+  top: 10rem;
+
+  &--success {
+    text-align: center;
+
+    &::before {
+      content: '';
+      display: inline-block;
+      background-image: url('../../assets/images/icon-check.svg');
+      width: 64px;
+      height: 64px;
+      text-align: center;
+    }
+
+    & .section__subtitle {
+      margin-top: 1rem;
+    }
+
+    @include mq(small) {
+      & {
+        position: absolute;
+        z-index: 1010;
+        top: 50%;
+        transform: translate(-50%, -50%);
+        width: 33rem;
+      }
+    }
+  }
+
+  &__header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+  }
+
+  &__close--icon {
+    width: 30px;
+    height: 30px;
+    margin-top: 5px;
+    cursor: pointer;
+    padding: 7px;
+  }
+
+  @include mq(small) {
+    & {
+      left: 50%;
+      width: 47rem;
+      transform: translateX(-50%);
+    }
+
+    & .product__quantity {
+      --fs-strong: 1.3rem;
+      vertical-align: 0em;
+    }
+  }
+}

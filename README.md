@@ -1,70 +1,61 @@
-# Getting Started with Create React App
+# Crowdfund: A product crowdfunding page
 
-This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
+Crowdfund is an application used to crowdfund the Mastercraft Bamboo Monitor Riser by allowing users to make
+pledges on the product or products of their choice that will be eventually shipped to them once built.
+## Overview
 
-## Available Scripts
+The Mastercraft Bamboo Monitor Riser is a sturdy and stylish platform that elevates your screen to a more comfortable viewing height thus reducing neck and eye strain. The Mastercraft Bamboo Monitor Riser has 3 products; the Bamboo Stand, the Black Edition Stand and the Mahogany Special Edition. Willing backers can pledge on some or all of the available Monitor Risers.
 
-In the project directory, you can run:
+This project is a Frontend Mentor Challenge solution.
 
-### `npm start`
 
-Runs the app in the development mode.\
-Open [http://localhost:3000](http://localhost:3000) to view it in the browser.
+### The challenge
 
-The page will reload if you make edits.\
-You will also see any lint errors in the console.
+Users should be able to:
 
-### `npm test`
+- View the optimal layout depending on their device's screen size
+- See hover states for interactive elements
+- Make a selection of which pledge to make
+- See an updated progress bar and total money raised based on their pledge total after confirming a pledge
+- See the number of total backers increment by one after confirming a pledge
+- Toggle whether or not the product is bookmarked
 
-Launches the test runner in the interactive watch mode.\
-See the section about [running tests](https://facebook.github.io/create-react-app/docs/running-tests) for more information.
 
-### `npm run build`
+### Screenshot
 
-Builds the app for production to the `build` folder.\
-It correctly bundles React in production mode and optimizes the build for the best performance.
 
-The build is minified and the filenames include the hashes.\
-Your app is ready to be deployed!
 
-See the section about [deployment](https://facebook.github.io/create-react-app/docs/deployment) for more information.
+### Links
 
-### `npm run eject`
 
-**Note: this is a one-way operation. Once you `eject`, you can’t go back!**
 
-If you aren’t satisfied with the build tool and configuration choices, you can `eject` at any time. This command will remove the single build dependency from your project.
+## My process
 
-Instead, it will copy all the configuration files and the transitive dependencies (webpack, Babel, ESLint, etc) right into your project so you have full control over them. All of the commands except `eject` will still work, but they will point to the copied scripts so you can tweak them. At this point you’re on your own.
+### Built with
 
-You don’t have to ever use `eject`. The curated feature set is suitable for small and middle deployments, and you shouldn’t feel obligated to use this feature. However we understand that this tool wouldn’t be useful if you couldn’t customize it when you are ready for it.
+This application was first built using vanilla JavaScript only. In this first step I used:
+  - Semantic HTML5 markup
+  - CSS custom properties
+  - CSS Flexbox
+  - Mobile-first workflow
+  - Sass
+  - Vanilla JavaScript
+  - Parcel Bundler
 
-## Learn More
+I later converted it to a React Application.
+  - React
 
-You can learn more in the [Create React App documentation](https://facebook.github.io/create-react-app/docs/getting-started).
+### What I learned
 
-To learn React, check out the [React documentation](https://reactjs.org/).
 
-### Code Splitting
+### Continued development
 
-This section has moved here: [https://facebook.github.io/create-react-app/docs/code-splitting](https://facebook.github.io/create-react-app/docs/code-splitting)
 
-### Analyzing the Bundle Size
 
-This section has moved here: [https://facebook.github.io/create-react-app/docs/analyzing-the-bundle-size](https://facebook.github.io/create-react-app/docs/analyzing-the-bundle-size)
+### Useful resource
 
-### Making a Progressive Web App
 
-This section has moved here: [https://facebook.github.io/create-react-app/docs/making-a-progressive-web-app](https://facebook.github.io/create-react-app/docs/making-a-progressive-web-app)
 
-### Advanced Configuration
+## Author
 
-This section has moved here: [https://facebook.github.io/create-react-app/docs/advanced-configuration](https://facebook.github.io/create-react-app/docs/advanced-configuration)
-
-### Deployment
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/deployment](https://facebook.github.io/create-react-app/docs/deployment)
-
-### `npm run build` fails to minify
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify](https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify)
+[b-kip](https://github.com/b-kip)

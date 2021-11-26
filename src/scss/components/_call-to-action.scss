@@ -1,0 +1,48 @@
+@use '../abstracts' as *;
+
+.call-to-action {
+  &__bookmark {
+    display: flex;
+    align-items: center;
+    background-color: hsl(0, 0%, 95%);
+    border-radius: 100vh;
+    cursor: pointer;
+
+    & .icon {
+      display: inline-block;
+      width: 59px;
+      height: 100%;
+    }
+
+    & .text {
+      display: none;
+      padding: 1rem 1.5rem 1rem 1rem;
+      font-weight: var(--fw-bold);
+
+      @include mq(small) {
+        display: inline;
+      }
+    }
+
+    &.bookmarked {
+      & .icon {
+        & circle {
+          fill: var(--clr-primary-dark);
+        }
+
+        & path {
+          fill: var(--clr-white);
+        }
+      }
+
+      & .text {
+        color: var(--clr-primary-dark);
+      }
+    }
+  }
+
+  &__main {
+    padding-left: 3rem;
+    padding-right: 3rem;
+  }
+}

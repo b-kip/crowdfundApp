@@ -1,0 +1,31 @@
+body {
+  line-height: 1.8;
+  font-family: var(--font-family);
+  font-size: var(--fs-body);
+  color: var(--clr-neutral-gray);
+}
+
+h1,
+.h1,
+h2,
+.h2,
+h3,
+.h3,
+h4,
+.h4 {
+  color: var(--clr-black);
+}
+
+a {
+  /* font-weight: var(--fw-700); */
+  color: var(--clr-black);
+  font-weight: var(--fw-medium);
+  text-decoration: none;
+}
+
+.text-strong {
+  color: var(--clr-neutral-black);
+  font-size: var(--fs-strong, 1rem);
+  font-weight: var(--fw-bold);
+  line-height: 1.5;
+}

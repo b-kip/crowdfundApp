@@ -1,0 +1,24 @@
+@use '../abstracts' as *;
+@use "sass:meta";
+
+@import url('https://fonts.googleapis.com/css2?family=Commissioner:wght@400;500;700&display=swap');
+
+:root {
+  --font-family: #{meta.inspect($font-family)};
+
+  @each $fs-name, $fs-value in $font-sizes {
+    --fs-#{$fs-name}: #{$fs-value};
+  }
+
+  @each $fw-name, $fw-value in $font-weights {
+    --fw-#{$fw-name}: #{$fw-value};
+  }
+
+  @each $clr-name, $clr-value in $colors {
+    --clr-#{$clr-name}: #{$clr-value};
+  }
+
+  @each $brk-name, $brk-value in $breakpoint {
+    --brk-#{brk-name}: #{$brk-value};
+  }
+}
