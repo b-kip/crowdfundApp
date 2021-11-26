@@ -9,7 +9,7 @@ The Mastercraft Bamboo Monitor Riser is a sturdy and stylish platform that eleva
 This project is a Frontend Mentor Challenge solution.
 
 
-### The challenge
+### Functionality and Features
 
 Users should be able to:
 
@@ -26,7 +26,8 @@ Users should be able to:
 
 
 ### Links
-
+Hosted by Vercel
+Source on Github
 
 
 ## My process

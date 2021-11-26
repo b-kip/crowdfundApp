@@ -3,6 +3,7 @@ const nav = document.querySelector('#nav');
 const navOverlay = document.querySelector('#nav-overlay');
 const pageOverlay = document.querySelector('#page-overlay');
 const openRewardButtons = document.querySelectorAll('.btn-open-reward');
+const getStartedButton = document.querySelector('[href="#main-modal"]');
 const bookmark = document.querySelector('.call-to-action__bookmark');
 const mainModal = document.querySelector('#main-modal');
 const successModal = document.querySelector('#success-modal');
@@ -44,7 +45,7 @@ bookmark.addEventListener('click', function(event){
 });
 
 // console.log(openRewardButtons);
-openRewardButtons.forEach(function(button){
+[...openRewardButtons, getStartedButton].forEach(function(button){
   button.addEventListener('click', function() {
     pageOverlay.classList.remove('hidden');
     mainModal.classList.remove('hidden');
@@ -100,7 +101,7 @@ pledges.forEach(function(pledge){
 
             // remove class from other pledges
             pledges.forEach(function(deselectPledge){
-              if (deselectPledge != pledge) {
+              if (deselectPledge !== pledge) {
                 deselectPledge.classList.remove('selected');
               }
             });
