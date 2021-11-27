@@ -1,20 +1,23 @@
-import { useEffect } from 'react';
+// import { useState, useEffect } from 'react';
 
 import Header from './layoutComponents/Header';
 import Main from './layoutComponents/Main';
-import Modal from './components/Modal';
+import Modal from './components/Utils/Modal';
 
 function App() {
+  // const [showModal, setShowModal] = useState(false);
+  
 
-  useEffect(() => {
-    import('./js/main.js');
-  }, []);
+  // useEffect(() => {
+  //   import('./js/main.js');
+  // }, []);
   return (
     <>
       <Header />
       <Main />
 
       {/* <!-- Selection modal start --> */}
+
       <Modal id="main-modal" >
       <header className="modal__header">
           <h2 className="section__subtitle">Back this project</h2>
