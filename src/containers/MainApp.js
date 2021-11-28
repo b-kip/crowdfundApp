@@ -21,7 +21,7 @@ export default function MainApp() {
     <>
       <main className="flow-content">
         { showOverlay && <Overlay closeOverlay={closeOverlay}/>}
-        <Intro open/>
+        <Intro/>
         <Stats />
         <About>
           <Products openOverlay={openOverlay}/>

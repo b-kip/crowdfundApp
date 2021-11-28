@@ -5,7 +5,7 @@ export default function Products({ openOverlay }) {
   return (
     <div className="products flow-content" id="products">
       {
-        products.map(product => (
+        products.slice(1, products.length).map(product => (
           <ProductDetails product={product} handleClick={openOverlay} key={product.name}/>
         ))
       }
