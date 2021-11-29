@@ -8,7 +8,8 @@
   margin: 0 -1.5rem;
   margin-top: 1rem;
   border-top: 1px solid var(--clr-gray-600);
-  display: none;
+  // display: none; // painting passed to React
+  display: flex;
   gap: 1.5rem;
   flex-direction: column;
   text-align: center;
@@ -26,9 +27,10 @@
     text-align: left;
   }
 
-  .selected & {
-    display: flex;
-  }
+  // Let React control the display and CSS control the layout.
+  // .selected & {
+  //   display: flex;
+  // }
 
   &__form {
     display: flex;

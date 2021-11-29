@@ -8,6 +8,10 @@
     gap: 1rem;
     border: 1px solid var(--clr-gray-600);
 
+    &--selected {
+      border: 2px solid var(--clr-primary-light);
+    }
+
     @include mq(small) {
       gap: 1rem 2rem;
     }

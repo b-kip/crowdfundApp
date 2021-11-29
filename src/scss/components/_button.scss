@@ -1,4 +1,5 @@
 .btn {
+  --bg-clr-onActive: var(--clr-primary-dark);
   display: inline-block;
   cursor: pointer;
   color: var(--clr-white);
@@ -14,8 +15,23 @@
     background-color: var(--clr-gray-600);
   }
 
+  &--clear {
+    --bg-clr-onActive: transparent;
+    background-color: transparent;
+
+    &:hover,
+    &:focus {
+      opacity: 0.85;
+    }
+  }
+
+  &--tight {
+    padding: 0;
+    border-radius: 0;
+  }
+
   &:hover,
   &:focus {
-    background-color: var(--clr-primary-dark);
+    background-color: var(--bg-clr-onActive);
   }
 }
