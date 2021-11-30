@@ -49,6 +49,19 @@ I later converted it to a React Application.
 
 ### What I learned
 
+  - Using styled components to create components that receive dynamic style values. The Progressbar component determines what percentage of the set pledge target of $100,000 has been received and passes this value as a width of the ::after element of the Bar styled component.
+  ```js
+    const Bar = styled.div`
+      ...
+       &::after {
+        width: ${props => props.percentProgress};
+        ...
+        }
+      `
+  ```
+  I chose styles components in favor of (css-vars-hook)[https://www.npmjs.com/package/css-vars-hook] that would've allowed me to use CSS custom properties to pass dynamic width values to the ::after pseudo-element.
+
+  - Documenting code with JSDoc.
 
 ### Continued development
 
