@@ -10,6 +10,13 @@ import Pledges from './Pledges';
 
 import { products as productsAvailable, productInventory as currentProductInventory, pledges as receivedPledges, pledgeTarget } from '../data';
 
+/**
+ * Main component that handles:
+ * 1. pledge submission,
+ * 2. updating pledges,
+ * 3. decrementing product once they've been pledge on
+ * 4. and controls rendering of components rendered inside modals.
+ */
 export default function MainApp() {
   const [showPledges, setShowPledges] = useState(false); // controls toggling
   const [showSuccessMessage, setShowSuccessMessage] = useState(false); //
@@ -25,13 +32,36 @@ export default function MainApp() {
   // DERIVED STATE
   // total pledges
   const totalPledges = pledges.reduce((amount, pledge) => {
-    console.log("Amount", amount);
+    // console.log("Amount", amount);
     return pledge.amount + amount
   }, 0);
-  console.log(totalPledges);
+  // console.log(totalPledges);
+
   // total backers
   const totalBackers = pledges.length;
 
+  // closes both pledges modal and overlay.
+  function closePledges() {
+    setShowPledges(false);
+  }
+
+  // open both the pledges Modal and overlay.
+  function openPledges() {
+    setShowPledges(true);
+  }
+
+  // closeses pledges forms and open success message
+  function openSuccessMessage() {
+    closePledges();
+    setShowSuccessMessage(true);
+  }
+
+  // close success message modal.
+  // Clicking the overlay doesn't close the success message
+  // this handle is not passed to the overlay.
+  function closeSuccessMessage() {
+    setShowSuccessMessage(false);
+  }
 
   // updating pledge: adding productId and amount. fetch from children.
   function addPledge(pledge) {
@@ -49,23 +79,10 @@ export default function MainApp() {
     setProductInventory({...productInventory, [productId]: { quantity } });
   }
 
-  // closes both pledges modal and overlay.
-  function closePledges() {
-    setShowPledges(false);
-  }
-
-  // open both the pledges Modal and overlay.
-  function openPledges() {
-    setShowPledges(true);
-  }
-
-  function openSuccessMessage() {
-    setShowSuccessMessage(true);
-    closePledges();
-  }
-
-  function closeSuccessMessage() {
-    setShowSuccessMessage(false);
+  function handlePledgeSubmission(pledge) {
+    addPledge(pledge);
+    openSuccessMessage();
+    subtractProductQuantity(pledge.productId);
   }
 
   return (
@@ -91,7 +108,14 @@ export default function MainApp() {
       </main>
 
       { 
-        showPledges && <Pledges closePledges={closePledges} openSuccessMessage={openSuccessMessage}/>
+        showPledges && (
+          <Pledges
+            products={products}
+            productInventory={productInventory}
+            closePledges={closePledges}
+            onPledgeSubmission={handlePledgeSubmission}
+          />
+        )
       }
 
       {

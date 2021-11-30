@@ -1,17 +1,29 @@
 import { useState } from 'react';
 
 import Modal from '../components/Utils/Modal';
-import PledgeDetails from './PledgeDetails';
+import PledgeDetails from '../components/PledgeDetails';
 import CloseButton from '../assets/images/icon-close-modal.svg';
 
-import { products } from '../data'; // We pledge on products so each
+/**
+ * Displays a pledgeForm for each product.
+ * @param {product[]} products - List of product info: product id, name, price and description. We pledge on products so each
 // product is a pledge type.
+ * @param {{productId: { quantity: number }}} productInventory - Quantity of each product available for pledging
+  * @callback closePledges - closePledges modal after submitting pledge.
+  * @callback onPledgeSubmission - receive an amount and create a pledge object for submission
+ * @returns 
+ */
+export default function Pledges({ 
+  products, productInventory, closePledges ,onPledgeSubmission  
+}) {
+  // keeps a reference of the currently selected pledge item to enable styling
+  // and adding product
+  const [activeProductId, setActiveProductId] = useState(products[0].id);
 
-export default function Pledges({ closePledges, openSuccessMessage  }) {
-  const [activePledge, setActivePledge] = useState(products[0].id);
-
-  function updateActivePledge(pledge) {
-    setActivePledge(pledge);
+  // creates a pledge and runs pledge submission functions.
+  function handleAmountSubmission(amount) {
+    const pledge = { productId: activeProductId, amount}
+    onPledgeSubmission(pledge);
   }
   return (
     <Modal>
@@ -27,17 +39,17 @@ export default function Pledges({ closePledges, openSuccessMessage  }) {
 
       <div className="pledges flow-content">
         {
-          products.map(pledge => (
+          products.map(product => (
             <PledgeDetails
-              key={pledge.id}
-              isSelected={pledge.id === activePledge}
-              pledge={pledge}
-              setAsActivePledge={updateActivePledge}
-              openSuccessMessage={openSuccessMessage}
+              key={product.id}
+              isSelected={product.id === activeProductId}
+              product={product}
+              productQuantity={productInventory[product.id].quantity}
+              setAsActiveProductId={setActiveProductId}
+              handleAmountSubmission={handleAmountSubmission}
             />
           ))
         }
-        
       </div>
     </Modal>
   );
