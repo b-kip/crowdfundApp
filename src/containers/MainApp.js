@@ -79,10 +79,14 @@ export default function MainApp() {
           totalBackers={totalBackers}
           totalPledges={totalPledges}
           pledgeTarget={pledgeTarget}
-          
+
         />
         <About>
-          <Products openPledges={openPledges}/>
+          <Products
+            products={products}
+            productInventory={productInventory}
+            openPledges={openPledges}
+          />
         </About>
       </main>
 

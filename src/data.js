@@ -38,10 +38,10 @@ export const products = [
 
 // updating a list would be expensive.Looping to find, update then update list.
 export const productInventory = {
-  "no-reward": { quanity: 0 },
-  "Bamboo Stand": { quanity: 200 },
-  "Black Edition Stand": { quanity: 200 },
-  "Mahogany Special Edition": { quanity: 80 }
+  "no-reward": { quantity: 0 },
+  "Bamboo Stand": { quantity: 200 },
+  "Black Edition Stand": { quantity: 200 },
+  "Mahogany Special Edition": { quantity: 80 }
 };
 
 export const pledges = [

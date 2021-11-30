@@ -1,25 +1,32 @@
+/**
+ * Displays product name, price, description and no. of available products
+ * @param {product} product - product information
+ * @param {number} price - price information used as minimum pledge amount
+ * @callback handleClick - handle openning of pledgeForms
+ */
 export default function ProductDetails({
-  product, handleClick
+  product, productQuantity, handleClick
 }) {
+  const {name, price, description} = product;
   return (
     <div 
       className={`product flow-content
-      ${(product.quantity === 0 && ' unavailable')} `}
+      ${(productQuantity === 0 && ' unavailable')} `}
     >
       <div className="product__header">
-        <h3 className="product__title">{product.name}</h3>
-        <p className="product__subtitle">{`Pledge ${product.price} or more`}</p>
+        <h3 className="product__title">{name}</h3>
+        <p className="product__subtitle">{`Pledge ${price} or more`}</p>
       </div>
       <p className="product__description">
-        {product.description}
+        {description}
       </p>
       <div className="product__footer">
-        <p><span className="product__quantity text-strong">{product.quantity}</span> left</p>
+        <p><span className="product__quantity text-strong">{productQuantity}</span> left</p>
         <button 
-          className={`btn btn-open-reward ${ !product.quantity && 'btn--dark'}`}
+          className={`btn btn-open-reward ${ !productQuantity && 'btn--dark'}`}
           onClick={handleClick}
         >
-          { product.quantity ? 'Select Reward' : 'Out of Stock'}
+          { productQuantity ? 'Select Reward' : 'Out of Stock'}
         </button>
       </div>
     </div>
