@@ -45,6 +45,7 @@ This application was first built using vanilla JavaScript only. In this first st
 
 I later converted it to a React Application.
   - React
+  - styled components
 
 ### What I learned
 
