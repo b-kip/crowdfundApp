@@ -1,15 +1,14 @@
-import { useState } from 'react';
+import { useState, useEffect } from 'react';
 
 import Overlay from '../components/Utils/Overlay';
 import Modal from '../components/Utils/Modal';
 import Intro from './Intro';
 import Stats from '../components/Stats';
-import About from '../layoutComponents/About';
+import About from '../components/About';
 import Products from '../components/Products';
 import Pledges from './Pledges';
 
-import { products as productsAvailable, productInventory as currentProductInventory, pledges as receivedPledges, pledgeTarget } from '../data';
-
+import getAsyncData from '../api/getAsyncData';
 /**
  * Main component that handles:
  * 1. pledge submission,
@@ -18,27 +17,44 @@ import { products as productsAvailable, productInventory as currentProductInvent
  * 4. and controls rendering of components rendered inside modals.
  */
 export default function MainApp() {
+  const [isLoading, setIsLoading] = useState(true);
   const [showPledges, setShowPledges] = useState(false); // controls toggling
   const [showSuccessMessage, setShowSuccessMessage] = useState(false); //
   // of overlay and Pledges modal.
 
   // pledges [{productId, amount}]
-  const [pledges, setPledges] = useState(receivedPledges);
+  const [pledges, setPledges] = useState([]);
   // product [{productId, name, price, desription}]
-  const [products,  setProducts] = useState(productsAvailable);
+  const [products,  setProducts] = useState([]);
   // productInventory {productId{ quantity}}
-  const [productInventory, setProductInventory] = useState(currentProductInventory);
+  const [productInventory, setProductInventory] = useState({});
+  // The targeted amount of pledges for this campaign
+  const [pledgeTarget, setPledgeTarget] = useState(0);
+
 
   // DERIVED STATE
   // total pledges
   const totalPledges = pledges.reduce((amount, pledge) => {
-    // console.log("Amount", amount);
     return pledge.amount + amount
   }, 0);
-  // console.log(totalPledges);
 
   // total backers
   const totalBackers = pledges.length;
+
+  useEffect(() => {
+    getAsyncData()
+    .then( result => {
+      const { 
+        products, productInventory, pledges, pledgeTarget
+      } = result.data;
+      console.log(result.data);
+      setPledges(pledges);
+      setProducts(products);
+      setProductInventory(productInventory);
+      setPledgeTarget(pledgeTarget);
+      setIsLoading(false);
+    });
+  }, [setPledges, setProducts, setProductInventory]);
 
   // closes both pledges modal and overlay.
   function closePledges() {
@@ -85,9 +101,10 @@ export default function MainApp() {
     subtractProductQuantity(pledge.productId);
   }
 
+  console.log(isLoading);
   return (
     <>
-      <main className="flow-content">
+      {!isLoading && (<main className="flow-content">
         { (showPledges || showSuccessMessage) && <Overlay closeOverlay={closePledges}/>}
         <Intro
           openPledges={openPledges}
@@ -105,7 +122,7 @@ export default function MainApp() {
             openPledges={openPledges}
           />
         </About>
-      </main>
+      </main>)}
 
       { 
         showPledges && (

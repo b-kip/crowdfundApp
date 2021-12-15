@@ -1,4 +1,4 @@
-import Header from './layoutComponents/Header';
+import Header from './components/Header';
 import MainApp from './containers/MainApp';
 
 

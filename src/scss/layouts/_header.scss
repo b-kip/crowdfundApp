@@ -23,6 +23,9 @@
       @include mq(small) {
         max-width: 80%;
       }
+      @include mq(medium)  {
+        max-width: 1200px;
+      }
     }
 
     @include mq(small) {

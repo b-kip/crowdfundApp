@@ -1,4 +1,4 @@
-import { NavbarLinks } from "../../data";
+import { NavbarLinks } from "../../api/data";
 
 export default function NavList({ display }) {
   return (
