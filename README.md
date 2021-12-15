@@ -1,12 +1,12 @@
 # Crowdfund: A product crowdfunding page
 
-Crowdfund is a React application used to crowdfund for products. It allows customer to make pledge(s) on the product of their choice or donate cash to support the campaign.
+Crowdfund is a React application used to crowdfund for products. It allows a prospective backer to pledge(s) on products of their choice or donate cash to support the campaign.
 
 This instance of Crowdfund is crowdfunding for the Mastercraft Bamboo Monitor Riser.
 
 ## Overview
 
-The Mastercraft Bamboo Monitor Riser is a sturdy and stylish platform that elevates your screen to a more comfortable viewing height thus reducing neck and eye strain. The Mastercraft Bamboo Monitor Riser has 3 products; the Bamboo Stand, the Black Edition Stand and the Mahogany Special Edition. Willing backers can pledge on some or all of the available Monitor Risers.
+The Mastercraft Bamboo Monitor Riser is a sturdy and stylish platform that elevates your screen to a more comfortable viewing height thus reducing neck and eye strain. There are three types of monitor risers; the Bamboo Stand, the Black Edition Stand and the Mahogany Special Edition. Willing backers can pledge on some or all of the available Monitor Risers.
 
 This project is a Frontend Mentor Challenge solution.
 
