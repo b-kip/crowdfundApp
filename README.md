@@ -66,12 +66,12 @@ I later converted it to a React Application.
 
 ### Continued development
 
+  - add an email form to allow backers to add personal email. This email will be used to identify backers.
+  - store data in a database.
+  - Remove side effects from scroll restoration functions.
+  - Using hash routing to navigate to the right pledge.
 
-
-### Useful resource
-
-
-
+<!-- ### Useful resource -->
 ## Author
 
 [b-kip](https://github.com/b-kip)

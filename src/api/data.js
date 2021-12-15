@@ -14,21 +14,21 @@ export const products = [
     you will be signed up to receive product updates via email.`
   },
   {
-    id: "Bamboo Stand",
+    id: "bamboo-stand",
     name: "Bamboo Stand",
     price: 25,
     description: `You get an ergonomic stand made of natural bamboo. You've helped us launch our promotional campaign, and
     you’ll be added to a special Backer member list.`
   },
   {
-    id:"Black Edition Stand",
+    id:"black-edition-stand",
     name: "Black Edition Stand",
     price: 75,
     description: `You get a Black Special Edition computer stand and a personal thank you. You’ll be added to our Backer
     member list. Shipping is included.`
   },
   {
-    id:"Mahogany Special Edition",
+    id:"mahogany-special-edition",
     name: "Mahogany Special Edition",
     price: 200,
     description: `You get two Special Edition Mahogany stands, a Backer T-Shirt, and a personal thank you. You’ll be added
@@ -39,9 +39,9 @@ export const products = [
 // updating a list would be expensive.Looping to find, update then update list.
 export const productInventory = {
   "no-reward": { quantity: 0 },
-  "Bamboo Stand": { quantity: 200 },
-  "Black Edition Stand": { quantity: 200 },
-  "Mahogany Special Edition": { quantity: 80 }
+  "bamboo-stand": { quantity: 200 },
+  "black-edition-stand": { quantity: 200 },
+  "mahogany-special-edition": { quantity: 80 }
 };
 
 export const pledges = [
@@ -58,11 +58,11 @@ export const pledges = [
     amount: 200,
   },
   { 
-    productId: "Black Edition Stand",
+    productId: "black-edition-stand",
     amount: 100,
   },
   { 
-    productId: "Bamboo Stand",
+    productId: "bamboo-stand",
     amount: 200,
   },
   { 
@@ -70,19 +70,19 @@ export const pledges = [
     amount: 1,
   },
   { 
-    productId: "Black Edition Stand",
+    productId: "black-edition-stand",
     amount: 200,
   },
   { 
-    productId: "Mahogany Special Edition",
+    productId: "mahogany-special-edition",
     amount: 250,
   },
   { 
-    productId: "Black Edition Stand",
+    productId: "black-edition-stand",
     amount: 200,
   },
   { 
-    productId: "Bamboo Stand",
+    productId: "bamboo-stand",
     amount: 25,
   },
   { 
@@ -90,19 +90,19 @@ export const pledges = [
     amount: 200,
   },
   { 
-    productId: "Black Edition Stand",
+    productId: "black-edition-stand",
     amount: 75,
   },
   { 
-    productId: "Mahogany Special Edition",
+    productId: "mahogany-special-edition",
     amount: 200,
   },
   { 
-    productId: "Black Edition Stand",
+    productId: "black-edition-stand",
     amount: 120,
   },
   { 
-    productId: "Bamboo Stand",
+    productId: "bamboo-stand",
     amount: 200,
   },
   { 
@@ -110,11 +110,11 @@ export const pledges = [
     amount: 200,
   },
   { 
-    productId: "Black Edition Stand",
+    productId: "black-edition-stand",
     amount: 2000,
   },
   { 
-    productId: "Mahogany Special Edition",
+    productId: "mahogany-special-edition",
     amount: 200,
   },
 ];

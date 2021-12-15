@@ -2,12 +2,13 @@
  * Displays product name, price, description and no. of available products
  * @param {product} product - product information
  * @param {number} price - price information used as minimum pledge amount
- * @callback handleClick - handle openning of pledgeForms
+ * @callback handleClick - handle openning of pledgeForms. Receives hash for 
+ * bookmarking the opened pledge form.
  */
 export default function ProductDetails({
   product, productQuantity, handleClick
 }) {
-  const {name, price, description} = product;
+  const {name, price, description, id} = product;
   return (
     <div 
       className={`product flow-content
@@ -24,7 +25,7 @@ export default function ProductDetails({
         <p><span className="product__quantity text-strong">{productQuantity}</span> left</p>
         <button 
           className={`btn btn-open-reward ${ !productQuantity && 'btn--dark'}`}
-          onClick={handleClick}
+          onClick={() => handleClick(`#${id}-form`)}
         >
           { productQuantity ? 'Select Reward' : 'Out of Stock'}
         </button>

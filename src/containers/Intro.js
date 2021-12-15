@@ -4,7 +4,8 @@ import { ReactComponent as Bookmark } from '../assets/images/bookmark.svg';
 /**
  * Display the intro section of the crowdfund app. Enable user to bookmark
  * the project and open pledges form.
- * @callback openPledges - Opens the pledge form.
+ * @callback openPledges - Opens the pledge form. Receives a hash to bookmark
+ * opened pledge form.
  * @returns
  */
 export default function Intro({ openPledges }) {
@@ -25,7 +26,7 @@ export default function Intro({ openPledges }) {
       <div className="call-to-action">
         <button 
           className="call-to-action__main btn-open-reward btn"
-          onClick={openPledges}
+          onClick={() => openPledges('#pledge-form-container')}
         >
             Back this project
         </button>

@@ -16,9 +16,10 @@ import getAsyncData from '../api/getAsyncData';
  * 3. decrementing product once they've been pledge on
  * 4. and controls rendering of components rendered inside modals.
  */
+let scrollPositionTop = 0;
 export default function MainApp() {
   const [isLoading, setIsLoading] = useState(true);
-  const [showPledges, setShowPledges] = useState(false); // controls toggling
+  const [showPledges, setShowPledges] = useState(false); // controls toggling of pledge form.
   const [showSuccessMessage, setShowSuccessMessage] = useState(false); //
   // of overlay and Pledges modal.
 
@@ -58,18 +59,30 @@ export default function MainApp() {
 
   // closes both pledges modal and overlay.
   function closePledges() {
+    window.scroll(0, scrollPositionTop);
+    // window.history.back();
     setShowPledges(false);
   }
 
   // open both the pledges Modal and overlay.
-  function openPledges() {
+  // hash format "#{hashinfo}"
+  function openPledges(hash) {
+    // get current scroll position.
+    scrollPositionTop =window.scrollY;
     setShowPledges(true);
+    window.scroll(0, 0);
+    // window.location.hash = hash;
   }
 
   // closeses pledges forms and open success message
   function openSuccessMessage() {
+    let prevScrollPosTop = scrollPositionTop
+    // cheat closePledges to maintain position.
+    scrollPositionTop = window.scrollY;
     closePledges();
     setShowSuccessMessage(true);
+    window.scroll(0, 0);
+    scrollPositionTop = prevScrollPosTop;
   }
 
   // close success message modal.
@@ -77,6 +90,8 @@ export default function MainApp() {
   // this handle is not passed to the overlay.
   function closeSuccessMessage() {
     setShowSuccessMessage(false);
+    // reset scroll position.
+    window.scroll(0,scrollPositionTop);
   }
 
   // updating pledge: adding productId and amount. fetch from children.
@@ -127,6 +142,7 @@ export default function MainApp() {
       { 
         showPledges && (
           <Pledges
+            id="pledge-form-container"
             products={products}
             productInventory={productInventory}
             closePledges={closePledges}
@@ -146,7 +162,9 @@ export default function MainApp() {
           <button 
             className="btn" id="success-btn"
             onClick={closeSuccessMessage}
-          >Got it!</button>
+          >
+            Got it!
+          </button>
         </Modal>
         )
       }

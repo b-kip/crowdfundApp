@@ -6,6 +6,7 @@
   position: absolute;
   z-index: 1010;
   top: 9rem;
+  overscroll-behavior: contain;
   
   &__header {
     display: flex;
