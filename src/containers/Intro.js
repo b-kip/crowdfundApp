@@ -1,4 +1,23 @@
+import { useState } from 'react';
+import { ReactComponent as Bookmark } from '../assets/images/bookmark.svg';
+
+/**
+ * Display the intro section of the crowdfund app. Enable user to bookmark
+ * the project and open pledges form.
+ * @callback openPledges - Opens the pledge form.
+ * @returns
+ */
 export default function Intro({ openPledges }) {
+  const [isBookmarked, setIsBookmarked] = useState(false);
+
+  const toggleBookmarking = () => {
+    const value = prompt(`Please use the shortcut Ctrl + D to bookmark or unbookmark this page.
+    Enter ANY CHARACTER when done.
+    `);
+    if( value && value !== "") {
+      setIsBookmarked(!isBookmarked);
+    }
+  };
   return (
     <section className="page-intro flow-content container">
       <h1 className="page-intro__title">Mastercraft Bamboo Monitor Riser</h1>
@@ -10,9 +29,12 @@ export default function Intro({ openPledges }) {
         >
             Back this project
         </button>
-        <div className="call-to-action__bookmark">
-          <svg className="icon"  viewBox="0 0 56 56"  xmlns="http://www.w3.org/2000/svg"><g fill="none" fillRule="evenodd"><circle fill="#2F2F2F" cx="28" cy="28" r="28"/><path fill="#B1B1B1" d="M23 19v18l5-5.058L33 37V19z"/></g></svg>
-          <span className="text">Bookmark</span>
+        <div 
+            className={`call-to-action__bookmark ${isBookmarked ? "bookmarked": ""}`}
+            onClick={toggleBookmarking}
+          >
+          <Bookmark className="icon"/>
+          <span className="text">{ isBookmarked ? "Bookmarked" : "Bookmark"}</span>
         </div>
       </div>
     </section>

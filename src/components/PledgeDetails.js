@@ -7,7 +7,7 @@ import PledgeForm from '../containers/PledgeForm';
  * @param {product} - contains product details.
  * @param {number} productQuantity - number of product available.
  * @callback handleAmountSubmission - receive an amount and create a pledge object for submission.
- * @returns 
+ * @returns - JSX
  */
 export default function PledgeDetails({ 
   isSelected,
