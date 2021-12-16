@@ -1,11 +1,11 @@
 import { useState, useEffect } from 'react';
 
-import Modal from '../components/Utils/Modal';
 import Intro from './Intro';
 import Stats from '../components/Stats';
 import About from '../components/About';
 import Products from '../components/Products';
 import Pledges from './Pledges';
+import SuccessMessageModal from '../components/SuccessMessageModal';
 
 import getAsyncData from '../api/getAsyncData';
 /**
@@ -144,7 +144,6 @@ export default function MainApp() {
       { 
         showPledges && (
           <Pledges
-            id="pledge-form-container"
             products={products}
             productInventory={productInventory}
             closePledges={closePledges}
@@ -155,19 +154,9 @@ export default function MainApp() {
 
       {
         showSuccessMessage && (
-        <Modal id="success-modal" classModifier=" modal--success">
-          <h2 className="section__subtitle">Thanks for your support!</h2>
-          <p>
-            Your pledge brings us one step closer to sharing Mastercraft Bamboo Monitor Riser worldwide. You will get
-            an email once our campaign is completed.
-          </p>
-          <button 
-            className="btn" id="success-btn"
-            onClick={closeSuccessMessage}
-          >
-            Got it!
-          </button>
-        </Modal>
+          <SuccessMessageModal
+            closeSuccessMessage={closeSuccessMessage}
+          />
         )
       }
     </>

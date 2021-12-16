@@ -1,6 +1,14 @@
 @use '../abstracts' as *;
 
 .pledges {
+  &-container {
+    --flow-spacer:1.25rem;
+    padding-top: 2.25rem;
+  }
+
+  margin-top: 1.5rem;
+
+  
   .product {
     display: grid;
     grid-template-columns: min-content max-content 1fr;

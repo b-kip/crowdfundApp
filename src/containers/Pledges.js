@@ -14,7 +14,7 @@ import CloseButton from '../assets/images/icon-close-modal.svg';
  * @returns 
  */
 export default function Pledges({ 
-  products, productInventory, closePledges ,onPledgeSubmission  
+  products, productInventory, closePledges ,onPledgeSubmission, containerClass  
 }) {
   // fetching active pledge id from url.
   const pledgeFromHash = window.location.hash.slice(1);
@@ -31,7 +31,7 @@ export default function Pledges({
     onPledgeSubmission(pledge);
   }
   return (
-    <Modal closeModal={closePledges}>
+    <Modal containerClass="pledges-container" classModifier={containerClass}>
       <header className="modal__header">
         <h2 className="section__subtitle">Back this project</h2>
         <button className="btn  btn--tight btn--clear"
