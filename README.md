@@ -64,7 +64,7 @@ I later converted it to a React Application.
 
   - Documenting code with JSDoc.
   - Manually restoring scroll position. Scrolling long modal also changes scroll position of the body. I didn't use `Overscroll-behaviour: contain` because a different scroll behaviour is shown in the design.
-
+  - Responsive font using (fluid sizing)[https://css-tricks.com/snippets/css/fluid-typography/]
 ### Continued development
 
   - add an email form to allow backers to add personal email. This email will be used to identify backers.
