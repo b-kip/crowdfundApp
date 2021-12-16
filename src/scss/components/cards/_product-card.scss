@@ -2,12 +2,16 @@
 @use '../../abstracts' as *;
 
 .product {
+  --flow-spacer: 1.25rem;
   border-radius: 10px;
   border: 1px solid var(--clr-border, var(--clr-gray-600));
-  padding: 2rem 1.5rem;
+  // padding: 2rem 1.5rem;
+  padding: 1.5rem;
   position: relative;
 
-  @include mq(small) {
+  @media (min-width: 560px) {
+    --flow-spacer: 1.75rem;
+    padding-bottom:2rem;
     padding-left: 2rem;
     padding-right: 2rem;
   }
@@ -29,7 +33,7 @@
     display: flex;
     flex-direction: column;
 
-    @include mq(small) {
+    @media (min-width: 560px) {
       flex-direction: row;
       align-items: center;
       width: 100%;
@@ -43,26 +47,36 @@
 
   &__title {
     font-weight: var(--fw-bold);
-    font-size: 1.125rem;
+    font-size: 1.17em;
     color: var(--clr-black);
     line-height: 2.125rem;
     display: block;
     cursor: pointer;
-
-    &:hover {
-      @include mq(small) {
-        color: var(--clr-primary-light);
-      }
+    
+    // &:hover {
+    //   // @include mq(small) {
+    //   @media (min-width: 560px) {
+    //     color: var(--clr-primary-light);
+    //   }
+    // }
+    
+    @include mq(medium) {
+      font-size: 1.125rem;
     }
   }
 
   &__subtitle {
     color: var(--clr-primary-light);
     font-weight: var(--fw-medium);
+    font-size: 1rem;
+
+    // @include mq(small) {
+    //   font-size: 1rem;
+    // }
   }
 
   &__selection {
-    @include mq(small) {
+    @media (min-width: 560px) {
       color: var(--clr-primary-light);
     }
 
@@ -145,7 +159,8 @@
     justify-content: space-between;
     width: max-content;
 
-    @include mq(small) {
+    // @include mq(small) {
+    @media (min-width: 470px) {
       flex-direction: row;
       align-items: center;
       width: 100%;

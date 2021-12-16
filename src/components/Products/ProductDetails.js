@@ -24,7 +24,7 @@ export default function ProductDetails({
       <div className="product__footer">
         <p><span className="product__quantity text-strong">{productQuantity}</span> left</p>
         <button 
-          className={`btn btn-open-reward ${ !productQuantity && 'btn--dark'}`}
+          className={`btn btn--open-reward ${ !productQuantity ? 'btn--dark' : ''}`}
           onClick={() => handleClick(`#${id}`)}
         >
           { productQuantity ? 'Select Reward' : 'Out of Stock'}
