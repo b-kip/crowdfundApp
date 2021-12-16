@@ -1,7 +1,7 @@
 @use '../abstracts' as *;
 
 .modal {
-  --flow-spacer: 2rem;
+  --flow-spacer: 1rem;
   background-color: var(--clr-white);
   position: absolute;
   z-index: 1010;
@@ -52,7 +52,16 @@
     }
 
     & .section__subtitle {
-      margin-top: 1rem;
+      margin-top: 2rem;
+      // line-height: 1.1;
+    }
+
+    & .btn {
+      margin-top: 2rem;
+    }
+
+    p {
+      color: hsl(0, 0%, 48%);
     }
 
     @include mq(small) {

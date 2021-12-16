@@ -1,6 +1,6 @@
 .page {
   &-intro {
-    --flow-spacer: 1.5rem;
+    --flow-spacer: 1rem;
     text-align: center;
     margin-top: -4rem;
     position: relative;
@@ -20,12 +20,11 @@
 
     &__title {
       line-height: 1.1;
-      margin-top: 1.65rem;
+      margin-top: 1.5rem;
     }
 
     .call-to-action {
-      display: flex;
-      justify-content: space-between;
+      margin-top: 1.5rem; // text line-height requires less margin.
     }
   }
 }

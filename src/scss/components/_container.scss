@@ -8,6 +8,10 @@
 
   @include mq(small) {
     // margin: 0 auto;
+    // margin-left: auto;
+    // margin-right: auto;
+  }
+  @media (min-width: 768px) {
     margin-left: auto;
     margin-right: auto;
   }

@@ -1,6 +1,10 @@
 @use '../abstracts' as *;
 
 .call-to-action {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  
   &__bookmark {
     display: flex;
     align-items: center;
@@ -19,7 +23,10 @@
       padding: 1rem 1.5rem 1rem 1rem;
       font-weight: var(--fw-bold);
 
-      @include mq(small) {
+      // @include mq(small) {
+      //   display: inline;
+      // }
+      @media screen and ( min-width: 485px ) {
         display: inline;
       }
     }
@@ -42,7 +49,9 @@
   }
 
   &__main {
-    padding-left: 3rem;
-    padding-right: 3rem;
+    padding-left: 2.75rem;
+    padding-right: 2.75rem;
+    // padding-left: 3rem;
+    // padding-right: 3rem;
   }
 }

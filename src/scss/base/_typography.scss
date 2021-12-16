@@ -1,8 +1,17 @@
+@use '../abstracts' as *;
+
 body {
+  --fs-body: 0.875rem; //14px
   line-height: 1.8;
   font-family: var(--font-family);
   font-size: var(--fs-body);
-  color: var(--clr-neutral-gray);
+  color: var(--clr-gray-600);
+
+  @include mq(small) {
+    & {
+      --fs-body: 1rem;
+    }
+  }
 }
 
 h1,
@@ -14,6 +23,7 @@ h3,
 h4,
 .h4 {
   color: var(--clr-black);
+  line-height: 1.1;
 }
 
 a {
@@ -24,7 +34,7 @@ a {
 }
 
 .text-strong {
-  color: var(--clr-neutral-black);
+  color: var(--clr-black);
   font-size: var(--fs-strong, 1rem);
   font-weight: var(--fw-bold);
   line-height: 1.5;
