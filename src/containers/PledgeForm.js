@@ -25,7 +25,7 @@ export default function PledgeForm({ name, price, onAmountSubmission }) {
     <div className="pledge">
       <p className="pledge__title">Enter your pledge</p>
       <form className="pledge__form" onSubmit={handleSubmit}>
-        <span className="pledge__amount">
+        <div className="pledge__amount">
           <input 
             className="pledge__amount__input" 
             type="number" 
@@ -35,7 +35,7 @@ export default function PledgeForm({ name, price, onAmountSubmission }) {
             required 
             min={price} // can't pledge an amount less than product's price.
           />
-        </span>
+        </div>
         <button type="submit" className="btn btn-submit-reward">
           Continue
         </button>

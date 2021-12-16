@@ -4,13 +4,16 @@
   grid-column: 1 /-1;
   grid-row: 4 / 5;
   padding: 0 1.5rem;
-  padding-top: 2rem;
+  // padding-top: 2rem;
+  padding-top: 1.75rem;
   margin: 0 -1.5rem;
-  margin-top: 1rem;
+  // margin-top: 1rem;
+  margin-top: 0.625rem;
   border-top: 1px solid var(--clr-gray-600);
   // display: none; // painting passed to React
   display: flex;
-  gap: 1.5rem;
+  // gap: 1.5rem;
+  gap: 1rem;
   flex-direction: column;
   text-align: center;
 
@@ -45,14 +48,20 @@
   &__amount {
     border: 1px solid var(--clr-gray-600);
     border-radius: 100vh;
-    padding: 1rem 0.5rem 1rem 1rem;
+    // padding: 1rem 0.5rem 1rem 1rem;
+    padding: 0.75rem 0.5rem 0.75rem 1rem;
     color: var(--clr-gray-600);
+    display: flex;
+    justify-content: center;
+    align-items: center;
 
     &::before {
       content: '$';
       display: inline-block;
       font-weight: bold;
-      padding-right: 4px;
+      color: var(--clr-gray-300);
+      // padding-right: 4px;
+      padding-right: 6px;
     }
 
     &__input {
@@ -60,7 +69,8 @@
       font-weight: var(--fw-bold);
       border: none;
       display: inline-block;
-      width: 6ch;
+      // width: 6ch;
+      width: 5.5ch;
 
       &:hover,
       &:focus {

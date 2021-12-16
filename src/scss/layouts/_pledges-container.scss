@@ -4,12 +4,15 @@
   &-container {
     --flow-spacer:1.25rem;
     padding-top: 2.25rem;
+    padding-bottom: 2rem;
   }
 
   margin-top: 1.5rem;
 
   
   .product {
+    --flow-spacer: 1.5rem;
+    line-height:1.65;
     display: grid;
     grid-template-columns: min-content max-content 1fr;
     /* grid-template-rows: 1fr 1fr minmax(min-content, 1fr) 1fr; */
@@ -40,6 +43,17 @@
       @include mq(small) {
         grid-column: 2/-2;
       }
+    }
+
+    &__title,
+    &__subtitle {
+      font-size: 0.875rem;
+      line-height: 1.5rem;
+    }
+
+    &__quantity {
+      --fs-strong: 1.25rem;
+      vertical-align: -0.1em;
     }
 
     &__description {
