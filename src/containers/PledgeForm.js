@@ -1,4 +1,4 @@
-import { useRef } from 'react';
+import { useRef, useEffect } from 'react';
 
 /**
  * Display a form for pledge entry.
@@ -9,6 +9,10 @@ import { useRef } from 'react';
 export default function PledgeForm({ name, price, onAmountSubmission }) {
   const inputRef = useRef();
   price = price === 0 ? 200 : price;
+
+  // useEffect(() => {
+  //   // inputRef.current.focus();
+  // }, []);
 
   function handleSubmit(e) {
     e.preventDefault();

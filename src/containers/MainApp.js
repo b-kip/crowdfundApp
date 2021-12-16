@@ -1,6 +1,5 @@
 import { useState, useEffect } from 'react';
 
-import Overlay from '../components/Utils/Overlay';
 import Modal from '../components/Utils/Modal';
 import Intro from './Intro';
 import Stats from '../components/Stats';
@@ -57,10 +56,14 @@ export default function MainApp() {
     });
   }, [setPledges, setProducts, setProductInventory]);
 
+  // useEffect(() => {
+  //   if( showPledges)
+  // }, []);
+
   // closes both pledges modal and overlay.
   function closePledges() {
     window.scroll(0, scrollPositionTop);
-    // window.history.back();
+    window.history.back();
     setShowPledges(false);
   }
 
@@ -70,19 +73,18 @@ export default function MainApp() {
     // get current scroll position.
     scrollPositionTop =window.scrollY;
     setShowPledges(true);
-    window.scroll(0, 0);
-    // window.location.hash = hash;
+    window.location.hash = hash;
   }
 
   // closeses pledges forms and open success message
   function openSuccessMessage() {
-    let prevScrollPosTop = scrollPositionTop
+    // let prevScrollPosTop = scrollPositionTop
     // cheat closePledges to maintain position.
-    scrollPositionTop = window.scrollY;
+    // scrollPositionTop = window.scrollY;
     closePledges();
     setShowSuccessMessage(true);
-    window.scroll(0, 0);
-    scrollPositionTop = prevScrollPosTop;
+    // window.scroll(0, 0);
+    // scrollPositionTop = prevScrollPosTop;
   }
 
   // close success message modal.
@@ -91,7 +93,7 @@ export default function MainApp() {
   function closeSuccessMessage() {
     setShowSuccessMessage(false);
     // reset scroll position.
-    window.scroll(0,scrollPositionTop);
+    // window.scroll(0,scrollPositionTop);
   }
 
   // updating pledge: adding productId and amount. fetch from children.
@@ -120,7 +122,7 @@ export default function MainApp() {
   return (
     <>
       {!isLoading && (<main className="flow-content">
-        { (showPledges || showSuccessMessage) && <Overlay closeOverlay={closePledges}/>}
+        
         <Intro
           openPledges={openPledges}
           />

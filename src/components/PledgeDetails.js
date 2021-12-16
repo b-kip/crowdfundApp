@@ -1,4 +1,5 @@
 import PledgeForm from '../containers/PledgeForm';
+import { useEffect, useRef } from 'react';
 
 /**
  * Displays product details that a backer pledges on and the pledge form to be filled.
@@ -17,6 +18,7 @@ export default function PledgeDetails({
   handleAmountSubmission 
 }) {
   const { id, name, price, description } = product;
+  const radioInputRef = useRef();
 
   let detailsClass = 'product'; //default class with base styles.
 
@@ -32,7 +34,15 @@ export default function PledgeDetails({
       detailsClass += ' unavailable';
     }
   }
-  // couldn't do the above className concatenation inline since it involves evaluating a compound boolean expression since it resulted in adding 'false' to className string.
+  // couldn't do the above className concatenation inline since it involves
+  // evaluating a compound boolean expression since it resulted in adding 
+  // 'false' to className string.
+
+  useEffect(() => {
+    if (isSelected) {
+      radioInputRef.current.focus();
+    }
+  }, [isSelected]);
 
   function handleClick() {
     // console.log("Active Product", id);
@@ -40,7 +50,7 @@ export default function PledgeDetails({
   }
   
   return (
-    <div className={detailsClass} id={id+'-form'}>
+    <div className={detailsClass} id={id}>
       <label className="product__selection">
         {/* <!-- <input type="checkbox" id="no-reward"> --> */}
         <input 
@@ -50,12 +60,16 @@ export default function PledgeDetails({
           checked={isSelected}
           value={id}
           onChange={handleClick}
-        />
+          ref={radioInputRef}
+          />
         <span aria-label="Checkbox"></span>
       </label>
       
       <div className="product__header">
-        <label htmlFor={id} className="product__title">
+        <label 
+          htmlFor={id} className="product__title"
+          onClick={handleClick}
+          >
           { name }
         </label>
         { productQuantity !== 0 && (

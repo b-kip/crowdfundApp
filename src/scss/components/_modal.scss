@@ -38,6 +38,9 @@
 
   &--success {
     text-align: center;
+    position: fixed;
+    top: 50%;
+    transform: translateY(-50%);
 
     &::before {
       content: '';
@@ -54,7 +57,7 @@
 
     @include mq(small) {
       & {
-        position: absolute;
+        position: fixed;
         z-index: 1010;
         top: 50%;
         transform: translate(-50%, -50%);

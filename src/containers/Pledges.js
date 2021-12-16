@@ -16,9 +16,14 @@ import CloseButton from '../assets/images/icon-close-modal.svg';
 export default function Pledges({ 
   products, productInventory, closePledges ,onPledgeSubmission  
 }) {
+  // fetching active pledge id from url.
+  const pledgeFromHash = window.location.hash.slice(1);
+  console.log(pledgeFromHash, productInventory[pledgeFromHash]);
+
+  const defaultActivePledgeId = productInventory[pledgeFromHash] ? pledgeFromHash : products[0].id;
   // keeps a reference of the currently selected pledge item to enable styling
   // and adding product
-  const [activeProductId, setActiveProductId] = useState(products[0].id);
+  const [activeProductId, setActiveProductId] = useState(defaultActivePledgeId);
 
   // creates a pledge and runs pledge submission functions.
   function handleAmountSubmission(amount) {
@@ -26,7 +31,7 @@ export default function Pledges({
     onPledgeSubmission(pledge);
   }
   return (
-    <Modal>
+    <Modal closeModal={closePledges}>
       <header className="modal__header">
         <h2 className="section__subtitle">Back this project</h2>
         <button className="btn  btn--tight btn--clear"

@@ -63,15 +63,18 @@ I later converted it to a React Application.
   I chose styles components in favor of (css-vars-hook)[https://www.npmjs.com/package/css-vars-hook] that would've allowed me to use CSS custom properties to pass dynamic width values to the ::after pseudo-element.
 
   - Documenting code with JSDoc.
+  - Manually restoring scroll position. Scrolling long modal also changes scroll position of the body. I didn't use `Overscroll-behaviour: contain` because a different scroll behaviour is shown in the design.
 
 ### Continued development
 
   - add an email form to allow backers to add personal email. This email will be used to identify backers.
   - store data in a database.
   - Remove side effects from scroll restoration functions.
-  - Using hash routing to navigate to the right pledge.
+  - Using hash routing to navigate to the right pledge element and restoring scroll position.
 
-<!-- ### Useful resource -->
+### Useful resource
+[Understanding page scrolling when a modal is open](https://css-tricks.com/prevent-page-scrolling-when-a-modal-is-open/)
+
 ## Author
 
 [b-kip](https://github.com/b-kip)

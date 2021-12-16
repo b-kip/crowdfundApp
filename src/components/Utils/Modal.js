@@ -1,7 +1,12 @@
-export default function Modal({ classModifier, children }){
+import Overlay from './Overlay';
+
+export default function Modal({ classModifier, closeModal, children }){
   return (
-    <section className={`modal flow-content container ${classModifier}`}>
-      { children }
-    </section>
+    <>
+      <Overlay closeOverlay={closeModal} />
+      <section className={`modal flow-content container ${classModifier}`}>
+        { children }
+      </section>
+    </>
   );
 }
