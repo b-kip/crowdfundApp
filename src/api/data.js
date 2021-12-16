@@ -67,7 +67,7 @@ export const pledges = [
   },
   { 
     productId: "no-reward",
-    amount: 1,
+    amount: 1000,
   },
   { 
     productId: "black-edition-stand",
@@ -79,11 +79,19 @@ export const pledges = [
   },
   { 
     productId: "black-edition-stand",
-    amount: 200,
+    amount: 500,
   },
   { 
     productId: "bamboo-stand",
     amount: 25,
+  },
+  { 
+    productId: "bamboo-stand",
+    amount: 25,
+  },
+  { 
+    productId: "bamboo-stand",
+    amount: 250,
   },
   { 
     productId: "no-reward",
@@ -106,6 +114,22 @@ export const pledges = [
     amount: 200,
   },
   { 
+    productId: "black-edition-stand",
+    amount: 120,
+  },
+  { 
+    productId: "bamboo-stand",
+    amount: 200,
+  },
+  { 
+    productId: "black-edition-stand",
+    amount: 120,
+  },
+  { 
+    productId: "bamboo-stand",
+    amount: 200,
+  },
+  { 
     productId: "no-reward",
     amount: 200,
   },
@@ -115,7 +139,15 @@ export const pledges = [
   },
   { 
     productId: "mahogany-special-edition",
-    amount: 200,
+    amount: 400,
+  },
+  { 
+    productId: "mahogany-special-edition",
+    amount: 800,
+  },
+  { 
+    productId: "mahogany-special-edition",
+    amount: 400,
   },
 ];
 

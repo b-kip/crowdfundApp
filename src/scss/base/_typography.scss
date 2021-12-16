@@ -1,7 +1,8 @@
 @use '../abstracts' as *;
 
 body {
-  --fs-body: 0.875rem; //14px
+  // --fs-body: 0.875rem; //14px
+  --fs-body: calc(0.875rem + (16 - 14) * ((100vw - 375px) / (640 - 375)));
   line-height: 1.8;
   font-family: var(--font-family);
   font-size: var(--fs-body);

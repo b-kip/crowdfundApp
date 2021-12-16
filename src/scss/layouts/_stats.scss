@@ -5,6 +5,12 @@
   --fs-strong: 2rem;
   text-align: center;
   /* font-size: 0.8rem; */
+  padding-top: 0.5rem;
+  padding-bottom: 2.5rem;
+
+  @media (min-width: 35rem) { // 528px
+    padding-top: 2rem;
+  }
 
   &-highlight {
     display: block;
@@ -16,7 +22,7 @@
     justify-content: center;
     align-items: center;
 
-    @include mq(small) {
+    @media (min-width: 35rem) { // 528px
       flex-direction: row;
       justify-content: flex-start;
       text-align: left;
@@ -24,18 +30,25 @@
 
     &__item {
       position: relative;
-      padding-top: 1.5rem;
-      padding-bottom: 1.5rem;
+      padding-top: 1.25rem;
+      padding-bottom: 1.375rem;
 
-      @include mq(small) {
+      @media (min-width: 35rem) { // 560px
         position: relative;
         padding: 0;
+        padding-right: calc(2rem + (50 - 32) * ((100vw - 35rem)/ (206)));
+      }
+      @media (min-width: 47.875rem) { // 766px
         padding-right: 4rem;
       }
     }
 
     > * + * {
-      @include mq(small) {
+      @media (min-width: 35rem) {
+        padding-left: calc(32px + ((44 - 32) * ((100vw - 35rem)/ (206))));
+        padding-right: calc(32px + (60 - 32) * ((100vw - 35rem)/ (206)));
+      }
+      @media (min-width: 47.875rem) {
         padding-left: 3rem;
         padding-right: 5rem;
       }
@@ -47,12 +60,11 @@
         top: 0;
         left: 50%;
         width: 95px;
-        border-top: 1px solid var(--clr-gray-600);
+        border-top: 1px solid var(--clr-gray-300);
         transform: translateX(-50%);
-        /* margin-top: 1.5rem; */
-        /* margin-bottom: 2rem; */
 
-        @include mq(small) {
+        // @include mq(small) {
+        @media (min-width: 35rem) {
           left: 0;
           top: 10%;
           bottom: 10%;
@@ -65,19 +77,15 @@
   }
 
   &__bar {
-    width: 100%;
-    // width: attr(data-width);
-    height: 1rem;
-    background-color: rgba(122, 122, 122, 0.1);
-    border-radius: 100vh;
-    &::after {
-      content: '';
-      display: block;
-      width: 75%;
-      // width: attr(data-width);
-      height: 100%;
-      background-color: var(--clr-primary-light);
-      border-radius: 100vh;
+    margin-top: 0.625rem;
+    max-width: 375px;
+    margin-left: auto;
+    margin-right: auto;
+
+    @media (min-width: 35rem) {
+      max-width: 100%;
+      margin-top: 2rem;
     }
+    
   }
 }

@@ -2,7 +2,7 @@ import Progressbar from './Progressbar';
 
 export default function Stats({ totalBackers, totalPledges, pledgeTarget }) {
   return (
-    <section className="stats container flow-content">
+    <section className="stats container">
       <ul className="stats__list">
         <li className="stats__list__item">
           <span className="stats-highlight text-strong">

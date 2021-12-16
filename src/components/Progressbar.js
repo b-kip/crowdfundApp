@@ -6,7 +6,7 @@ export default function Progressbar({ currentValue, maximumValue }) {
   // console.log("precentProgress", percentProgress);
 
   return (
-    <Bar percentProgress={percentProgress}/>
+    <Bar percentProgress={percentProgress} className="stats__bar"/>
   )
 }
 
@@ -15,9 +15,10 @@ export default function Progressbar({ currentValue, maximumValue }) {
 // to receive dynamic values using custom properties.
 const Bar = styled.div`
   width: 100%;
-  height: 1rem;
+  // height: 1rem;
+  height: 0.75rem;
   background-color: rgba(122, 122, 122, 0.1);
-  border-radius: 100vh;
+  border-radius: 9999vh;
   &::after {
     content: '';
     display: block;
