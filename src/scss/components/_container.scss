@@ -2,17 +2,10 @@
 
 .container {
   max-width: 46rem;
-  margin-left: 1.5rem;
-  margin-right: 1.5rem;
-  // margin: 0 1.5rem;
+  width: 87.5%;
+  margin-inline: auto;
 
-  @include mq(small) {
-    // margin: 0 auto;
-    // margin-left: auto;
-    // margin-right: auto;
-  }
-  @media (min-width: 768px) {
-    margin-left: auto;
-    margin-right: auto;
+  @media (min-width: 650px) {
+    width: 82.5%;
   }
 }

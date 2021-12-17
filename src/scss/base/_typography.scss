@@ -1,18 +1,22 @@
 @use '../abstracts' as *;
 
 body {
-  // --fs-body: 0.875rem; //14px
-  --fs-body: calc(0.875rem + (16 - 14) * ((100vw - 375px) / (640 - 375)));
+  --fs-body: 0.875rem; //14px
+  // don't make the body text fluid. Everything will be fluid. You might not want to
+  // want that.
+  // --fs-body: calc(0.875rem + (16 - 14) * ((100vw - 375px) / (640 - 375)));
+  // fluid text with a clamp at 640px. No need for media queries.
+  --fs-body: calc(0.875rem + (16 - 14) * ((min(640px, 100vw) - 375px) / (640 - 375)));
   line-height: 1.8;
   font-family: var(--font-family);
   font-size: var(--fs-body);
   color: var(--clr-gray-600);
 
-  @include mq(small) {
-    & {
-      --fs-body: 1rem;
-    }
-  }
+  // @include mq(small) {
+  //   & {
+  //     --fs-body: 1rem;
+  //   }
+  // }
 }
 
 h1,

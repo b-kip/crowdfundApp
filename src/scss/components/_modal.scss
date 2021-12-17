@@ -7,6 +7,8 @@
   z-index: 1010;
   top: 9rem;
   overscroll-behavior: contain;
+  left: 50%;
+  transform: translateX(-50%);
   
   &__header {
     display: flex;
@@ -22,25 +24,12 @@
     padding: 7px;
   }
 
-  @include mq(small) {
-    & {
-      left: 50%;
-      width: 47rem;
-      transform: translateX(-50%);
-    }
-
-    & .product__quantity {
-      --fs-strong: 1.3rem;
-      vertical-align: 0em;
-    }
-  }
-
-
   &--success {
     text-align: center;
+    max-width: 33rem;
     position: fixed;
     top: 50%;
-    transform: translateY(-50%);
+    transform: translate(-50%, -50%);
 
     &::before {
       content: '';
@@ -63,16 +52,5 @@
     p {
       color: hsl(0, 0%, 48%);
     }
-
-    @include mq(small) {
-      & {
-        position: fixed;
-        z-index: 1010;
-        top: 50%;
-        transform: translate(-50%, -50%);
-        width: 33rem;
-      }
-    }
   }
-
 }

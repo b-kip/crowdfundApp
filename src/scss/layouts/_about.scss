@@ -1,3 +1,43 @@
+@use '../abstracts' as *;
+
 .about {
   --flow-spacer: 1.5rem;
+  // --fs-body: calc(0.875rem + (16 - 14) * ((min(640px, 100vw) - 375px) / (640 - 375)));
+  // font-size: var(--fs-body);
+}
+
+.products {
+  .product {
+    @media (min-width: 560px) {
+      --flow-spacer: 1.75rem;
+      padding-bottom:2rem;
+      padding-left: 2rem;
+      padding-right: 2rem;
+    }
+
+    &__header {
+      @media (min-width: 560px) {
+        flex-direction: row;
+        align-items: center;
+        width: 100%;
+        gap: 1rem;
+        justify-content: space-between;
+      }
+    }
+
+    &__title {
+      @include mq(medium) {
+        font-size: 1.125rem;
+      }
+    }
+
+    &__footer {
+      @media (min-width: 470px) {
+        flex-direction: row;
+        align-items: center;
+        width: 100%;
+        gap: 1rem;
+      }
+    }
+  }
 }

@@ -1,6 +1,7 @@
 .page {
   &-intro {
     --flow-spacer: 1rem;
+    // --fs-body: calc(0.875rem + (16 - 14) * ((100vw - 375px) / (640 - 375)));
     text-align: center;
     margin-top: -4rem;
     position: relative;
