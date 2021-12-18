@@ -22,24 +22,26 @@ export default function PledgeForm({ name, price, onAmountSubmission }) {
   }
 
   return (
-    <div className="pledge">
-      <p className="pledge__title">Enter your pledge</p>
-      <form className="pledge__form" onSubmit={handleSubmit}>
-        <div className="pledge__amount">
-          <input 
-            className="pledge__amount__input" 
-            type="number" 
-            name={name} 
-            defaultValue={price}
-            ref={inputRef}
-            required 
-            min={price} // can't pledge an amount less than product's price.
-          />
-        </div>
-        <button type="submit" className="btn btn-submit-reward">
-          Continue
-        </button>
-      </form>
+    <div className="pledge-form">
+      <div className="pledge-form-container">
+        <p className="pledge-form__title">Enter your pledge</p>
+        <form className="pledge-form__form" onSubmit={handleSubmit}>
+          <div className="pledge-form__amount">
+            <input
+              className="pledge-form__amount__input"
+              type="number"
+              name={name}
+              defaultValue={price}
+              ref={inputRef}
+              required
+              min={price} // can't pledge an amount less than product's price.
+            />
+          </div>
+          <button type="submit" className="btn btn-submit-reward">
+            Continue
+          </button>
+        </form>
+      </div>
     </div>
   )
 }

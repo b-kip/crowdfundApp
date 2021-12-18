@@ -1,33 +1,50 @@
 @use '../../abstracts' as *;
 
-.pledge {
+.pledge-form {
   grid-column: 1 /-1;
   grid-row: 4 / 5;
-  padding: 0 1.5rem;
-  // padding-top: 2rem;
-  padding-top: 1.75rem;
-  margin: 0 -1.5rem;
-  // margin-top: 1rem;
-  margin-top: 0.625rem;
-  border-top: 1px solid var(--clr-gray-600);
-  // display: none; // painting passed to React
-  display: flex;
-  // gap: 1.5rem;
-  gap: 1rem;
-  flex-direction: column;
-  text-align: center;
-
+  
   @include mq(small) {
+    margin-top: 0.5rem;
     grid-column: 1 /-1;
     grid-row: 3 / 4;
-    padding-left: 2rem;
-    padding-right: 2rem;
-    margin-left: -2rem;
-    margin-right: -2rem;
-    flex-direction: row;
-    justify-content: space-between;
-    align-items: center;
-    text-align: left;
+  }
+
+  &::before {
+    content: '';
+    display: block;
+    width: 100%;
+    border-top: 1px solid var(--clr-gray-200);
+    position: absolute;
+    left: 0;
+  }
+
+  &-container {
+    // padding: 0 1.5rem;
+    // padding-top: 2rem;
+    // padding-top: 1.75rem;
+    // margin: 0 -1.5rem;
+    margin-top: 1.75rem;
+    // border-top: 1px solid var(--clr-gray-600);
+    // display: none; // painting passed to React
+    display: flex;
+    // gap: 1.5rem;
+    gap: 1rem;
+    flex-direction: column;
+    text-align: center;
+  
+    @include mq(small) {
+      grid-column: 1 /-1;
+      grid-row: 3 / 4;
+      padding-left: 2rem;
+      padding-right: 2rem;
+      margin-left: -2rem;
+      margin-right: -2rem;
+      flex-direction: row;
+      justify-content: space-between;
+      align-items: center;
+      text-align: left;
+    }
   }
 
   // Let React control the display and CSS control the layout.
@@ -65,6 +82,11 @@
       padding-right: 6px;
     }
 
+    &:hover,
+      &:focus {
+        border-color: var(--clr-primary-light);
+      }
+
     &__input {
       color: var(--clr-black);
       font-weight: var(--fw-bold);
@@ -76,6 +98,7 @@
       &:hover,
       &:focus {
         outline: none;
+        caret-color: var(--clr-primary-light);
       }
     }
   }

@@ -14,9 +14,11 @@ export default function ProductDetails({
       className={`product flow-content
       ${(productQuantity === 0 && ' unavailable')} `}
     >
-      <div className="product__header">
-        <h3 className="product__title">{name}</h3>
-        <p className="product__subtitle">{`Pledge ${price} or more`}</p>
+      <div className="product__header-container">
+        <div className="product__header-info">
+          <h3 className="product__title">{name}</h3>
+          <p className="product__subtitle">{`Pledge ${price} or more`}</p>
+        </div>
       </div>
       <p className="product__description">
         {description}

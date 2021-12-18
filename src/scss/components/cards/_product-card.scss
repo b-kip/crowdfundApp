@@ -3,6 +3,7 @@
 
 .product {
   --flow-spacer: 1.25rem;
+  --input-bdr-active-clr: var(--clr-gray-600);
   border-radius: 10px;
   border: 1px solid var(--clr-border, var(--clr-gray-600));
   // padding: 2rem 1.5rem;
@@ -23,14 +24,98 @@
   }
 
   &__header {
-    display: flex;
-    flex-direction: column;
+    &-container {
+      display: flex;
+      flex-direction: row;
+      align-items: center;
+      gap: 1rem;
+    }
+
+    &-info {
+      display: flex;
+      flex-direction: column;
+    }
+
+    &-selection {
+      display: block;
+      height: 32px;
+      width: 32px;
+      @media (min-width: 560px) {
+        color: var(--clr-primary-light);
+      }
+  
+      & input[type='checkbox']:checked {
+        --clr-border: var(--clr-primary-light);
+      }
+  
+      & input[type='radio'] {
+        position: absolute;
+        opacity: 0;
+        z-index: -1;
+  
+        + div {
+          cursor: pointer;
+          position: relative;
+          display: inline-block;
+          overflow: hidden;
+          width: 32px;
+          height: 32px;
+  
+          &::before {
+            content: '';
+            display: inline-block;
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 32px;
+            height: 32px;
+            border: 1px solid var(--input-bdr-active-clr);
+            border-radius: 50%;
+          }
+  
+          &::after {
+            content: '';
+            position: absolute;
+            top: 49.5%;
+            left: 50.5%;
+            display: inline-block;
+            width: 18px;
+            height: 18px;
+            /* border: 1px solid var(--clr-neutral-gray); */
+            border-radius: 50%;
+            background-color: var(--clr-primary-light);
+            opacity: 0;
+            transform: translate(-50%, -50%);
+            transition: opacity ease 0.2s;
+          }
+        }
+  
+        &:checked {
+          + div::after {
+            opacity: 1;
+          }
+        }
+  
+        &:not(:disabled) {
+          + div:hover::before {
+            --input-bdr-active-clr: var(--clr-primary-light);
+            // border-color: var(--clr-primary-light);
+          }
+        }
+  
+        // &:hover {
+        //   + div::before {
+        //     border-color: var(--clr-primary-light);
+        //   }
+        // }
+      }
+    }
   }
 
   &__title {
     font-weight: var(--fw-bold);
     font-size: 1.17em;
-    color: var(--clr-black);
+    color: var( --clr-active, var(--clr-black));
     line-height: 2.125rem;
     display: block;
     cursor: pointer;
@@ -40,77 +125,7 @@
     color: var(--clr-primary-light);
     font-weight: var(--fw-medium);
     font-size: 1rem;
-  }
-
-  &__selection {
-    @media (min-width: 560px) {
-      color: var(--clr-primary-light);
-    }
-
-    & input[type='checkbox']:checked {
-      --clr-border: var(--clr-primary-light);
-    }
-
-    & input[type='radio'] {
-      position: absolute;
-      opacity: 0;
-      z-index: -1;
-
-      + span {
-        cursor: pointer;
-        position: relative;
-        display: inline-block;
-        overflow: hidden;
-        width: 32px;
-        height: 32px;
-
-        &::before {
-          content: '';
-          display: inline-block;
-          position: absolute;
-          top: 0;
-          left: 0;
-          width: 32px;
-          height: 32px;
-          border: 1px solid var(--clr-gray-600);
-          border-radius: 50%;
-        }
-
-        &::after {
-          content: '';
-          position: absolute;
-          top: 50%;
-          left: 50%;
-          display: inline-block;
-          width: 18px;
-          height: 18px;
-          /* border: 1px solid var(--clr-neutral-gray); */
-          border-radius: 50%;
-          background-color: var(--clr-primary-light);
-          opacity: 0;
-          transform: translate(-50%, -50%);
-          transition: opacity ease 0.2s;
-        }
-      }
-
-      &:checked {
-        + span::after {
-          opacity: 1;
-        }
-      }
-
-      &:not(:disabled) {
-        + span:hover::before {
-          border-color: var(--clr-primary-light);
-        }
-      }
-
-      &:hover {
-        + span::before {
-          border-color: var(--clr-primary-light);
-        }
-      }
-    }
+    cursor: pointer;
   }
 
   &__quantity {

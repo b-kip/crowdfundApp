@@ -51,33 +51,37 @@ export default function PledgeDetails({
   
   return (
     <div className={detailsClass} id={id}>
-      <label className="product__selection">
-        {/* <!-- <input type="checkbox" id="no-reward"> --> */}
-        <input 
-          type="radio" 
-          id={id} 
-          name="pledgeType" 
-          checked={isSelected}
-          value={id}
-          onChange={handleClick}
-          ref={radioInputRef}
-          />
-        <span aria-label="Checkbox"></span>
-      </label>
-      
-      <div className="product__header">
-        <label 
-          htmlFor={id} className="product__title"
-          onClick={handleClick}
-          >
-          { name }
+      <div className="product__header-container">
+        <label className="product__header-selection">
+          {/* <!-- <input type="checkbox" id="no-reward"> --> */}
+          <input
+            type="radio"
+            id={id}
+            name="pledgeType"
+            checked={isSelected}
+            value={id}
+            onChange={handleClick}
+            ref={radioInputRef}
+            />
+          <div aria-label="Checkbox"></div>
         </label>
-        { productQuantity !== 0 && (
-          <p className="product__subtitle">
-            {`Pledge $ ${ price} or more`}
-          </p>
-          )
-        }
+        
+        <div 
+          className="product__header-info"
+          onClick={handleClick}
+        >
+          <label
+            htmlFor={id} className="product__title"
+            >
+            { name }
+          </label>
+          { productQuantity !== 0 && (
+            <p className="product__subtitle">
+              {`Pledge $ ${ price} or more`}
+            </p>
+            )
+          }
+        </div>
       </div>
       <p className="product__description">
         { description }

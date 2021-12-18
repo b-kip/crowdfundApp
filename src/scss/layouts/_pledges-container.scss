@@ -1,32 +1,36 @@
 @use '../abstracts' as *;
 
 .pledges {
+  margin-top: 1.5rem;
+
   &-container {
     --flow-spacer:1.25rem;
     padding-top: 2.25rem;
     padding-bottom: 2rem;
-
     // font-size: 0.85rem;
   }
 
-  margin-top: 1.5rem;
-
-  
   .product {
     --flow-spacer: 1.5rem;
     line-height:1.65;
     display: grid;
-    grid-template-columns: min-content max-content 1fr;
+    grid-template-columns: 32px max-content 1fr;
     /* grid-template-rows: 1fr 1fr minmax(min-content, 1fr) 1fr; */
     gap: 1rem;
     border: 1px solid var(--clr-gray-600);
+    position: relative;
 
     &--selected {
       border: 2px solid var(--clr-primary-light);
+      
+      @media (min-width: 784px) {
+        --fw-pledge-active: var(--fw-bold);
+      }
     }
 
     @include mq(small) {
-      gap: 1rem 2rem;
+      // gap: 1rem 2rem;
+      gap: 1rem;
     }
 
     &__selection {
@@ -41,29 +45,47 @@
     }
 
     &__header {
-      grid-column: 2/-1;
-
-      @media (min-width: 784px) {
-        flex-direction: row;
-        align-items: center;
-        width: 100%;
-        gap: 1rem;
-        justify-content: space-between;
+      &-container {
+        grid-column: 1/-1;
+        grid-row: 1/2;
+        
+        @media (min-width: 515px) {
+          grid-column: 1/-2;
+        }
       }
-
-      // @include mq(small) {
-      //   grid-column: 2/-2;
-      // }
-
-      @media (min-width: 515px) {
-        grid-column: 2/-2;
-      }
+      
+      &-info {
+        @media (min-width: 784px) {
+          flex-direction: row;
+          align-items: center;
+          width: 100%;
+          gap: 1rem;
+          justify-content: space-between;
+        }
+      }   
     }
 
     &__title,
     &__subtitle {
       line-height: 1.5rem;
       font-size:inherit;
+    }
+
+    &__header-container {
+      &:hover {
+        --input-bdr-active-clr: var(--clr-primary-light);
+        --clr-active: var(--clr-primary-light);
+        --fw-active: var(--fw-bold);
+      }
+    }
+
+    &__subtitle {
+      font-weight: var(--fw-active, var(--fw-medium));
+
+      &:focus,
+      &:hover {
+        font-weight: var(--fw-bold);
+      }
     }
 
     &__quantity {
@@ -84,6 +106,7 @@
     &__details {
       grid-column: 1 / 3;
       grid-row: 3/4;
+      margin-bottom: 0.5rem;
 
       // @include mq(small) {
       //   grid-column: 3 / 4;
@@ -92,6 +115,7 @@
       // }
 
       @media (min-width: 515px) {
+        margin-bottom: 0;
         grid-column: -2/-1;
         grid-row: 1/2;
         justify-self: flex-end;
