@@ -31,7 +31,7 @@ export default function Pledges({
     onPledgeSubmission(pledge);
   }
   return (
-    <Modal containerClass="pledges-container" classModifier={containerClass}>
+    <Modal containerClass="pledges-container" classModifier={containerClass} closeModal={closePledges}>
       <header className="modal__header">
         <h2 className="section__subtitle">Back this project</h2>
         <button className="btn  btn--tight btn--clear"
