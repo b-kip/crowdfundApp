@@ -1,7 +1,9 @@
 import styled from 'styled-components';
 
 export default function Progressbar({ currentValue, maximumValue }) {
+  
   let percentProgress = (currentValue / maximumValue) * 100;
+  percentProgress = Math.min(percentProgress, 100);
   percentProgress = percentProgress.toFixed(2) + "%";
   // console.log("precentProgress", percentProgress);
 

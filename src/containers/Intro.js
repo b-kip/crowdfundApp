@@ -20,7 +20,7 @@ export default function Intro({ openPledges }) {
     }
   };
   return (
-    <section className="page-intro flow-content container">
+    <section id="intro" className="page-intro flow-content container">
       <h1 className="page-intro__title">Mastercraft Bamboo Monitor Riser</h1>
       <p className="page-intro__lead">A beautiful & handcrafted monitor stand to reduce neck and eye strain.</p>
       <div className="call-to-action">

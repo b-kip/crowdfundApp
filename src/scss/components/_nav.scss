@@ -1,30 +1,23 @@
 @use '../abstracts' as *;
 
 .nav {
-  /* position: absolute; */
-  /* bottom: 0; */
-  /* left: 0; */
   width: 100%;
-  margin-top: 1.5rem;
-  /* height: 100%; */
+  margin-top: 0.5rem;
   background-color: var(--clr-white);
   border-radius: 0.5rem;
 
-  &--desktop {
-    // display: none;
-  }
 
   &-container {
     display: flex;
     flex-direction: column;
     justify-content: space-between;
     height: 100%;
-    padding-top: 1rem;
+    padding-top: 0.5rem;
     position: relative;
     z-index: 1000;
 
-    @include mq(small) {
-      padding-top: 2rem;
+    @media (min-width: 768px) {
+      padding-top: 1rem;
       flex-direction: row;
       align-items: center;
 
@@ -47,7 +40,7 @@
       border-top: 1px solid #e8e8e8;
     }
 
-    @include mq(small) {
+    @media (min-width: 768px) {
       display: flex;
 
       & > * + * {
@@ -56,21 +49,23 @@
     }
 
     &__item {
-      padding: 0.8em;
-      padding-left: 2em;
-      font-size: 1.25rem;
+      & a {
+        font-size: 1.125rem;
+        display: inline-block;
+        width: 100%;
+        padding: 1em;
+        padding-left: 1.25em;
 
-      @include mq(small) {
-        font-size: 1rem;
-
-        & a {
+        @media (min-width: 768px) {
+          font-size: 1rem;
           color: var(--clr-white);
         }
       }
     }
+      
   }
 
-  @include mq(small) {
+  @media (min-width: 768px) {
     &--desktop {
       display: block;
       margin-top: 0;

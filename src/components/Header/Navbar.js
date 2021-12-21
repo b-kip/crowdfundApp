@@ -11,18 +11,25 @@ export default function Navbar() {
   function toggleMenuLinks() {
     setShowNavList(!showNavList);
   }
+
+  function closeNavbar() {
+    setShowNavList(false);
+  }
   console.log("Navbar Loaded");
   return (
     <>
-      { showNavList && <Overlay/>}
+      { showNavList && <Overlay closeOverlay={closeNavbar}/>}
       <nav className="nav-container">
         <div className="nav-top">
           <Logo />
           <div className="nav--mobile">
-            <HamburgerButton handleClick={toggleMenuLinks}/>
+            <HamburgerButton
+              handleClick={toggleMenuLinks} 
+              isActive={showNavList}
+            />
           </div>
         </div>
-        <NavList display={showNavList}/>
+        <NavList display={showNavList} handleClick={closeNavbar}/>
       </nav>
     </>
     );
