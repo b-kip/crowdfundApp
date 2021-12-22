@@ -8,7 +8,6 @@ import {
 export default function getAsyncData() {
   return (
     new Promise(resolve => {
-      setTimeout(() => {
         resolve({
           data: {
             products,
@@ -17,8 +16,6 @@ export default function getAsyncData() {
             pledgeTarget
           }
         })
-      }, 500);
-    }
-    )
+    })
   );
 }
