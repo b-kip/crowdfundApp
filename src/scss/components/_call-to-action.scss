@@ -2,6 +2,7 @@
 
 .call-to-action {
   display: flex;
+  gap: 1rem;
   justify-content: space-between;
   align-items: center;
   
@@ -14,19 +15,16 @@
 
     & .icon {
       display: inline-block;
-      width: 59px;
+      width: 56px;
       height: 100%;
     }
 
     & .text {
       display: none;
-      padding: 1rem 1.5rem 1rem 1rem;
+      padding: 0.875rem 1.5rem 0.875rem 1rem;
       font-weight: var(--fw-bold);
 
-      // @include mq(small) {
-      //   display: inline;
-      // }
-      @media screen and ( min-width: 485px ) {
+      @media ( min-width: 500px ) {
         display: inline;
       }
     }
@@ -49,9 +47,18 @@
   }
 
   &__main {
-    padding-left: 2.75rem;
-    padding-right: 2.75rem;
-    // padding-left: 3rem;
-    // padding-right: 3rem;
+    padding-left: 1rem;
+    padding-right: 1rem;
+    width: 100%;
+    max-width:270px;
+    
+    @media (min-width: 360px) {
+      padding-left: 2.75rem;
+      padding-right: 2.75rem;
+    }
+
+    @media ( min-width: 500px ) {
+      width: initial;
+    }
   }
 }

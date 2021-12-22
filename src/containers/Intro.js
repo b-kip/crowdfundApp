@@ -25,7 +25,7 @@ export default function Intro({ openPledges }) {
       <p className="page-intro__lead">A beautiful & handcrafted monitor stand to reduce neck and eye strain.</p>
       <div className="call-to-action">
         <button 
-          className="call-to-action__main btn-open-reward btn"
+          className="call-to-action__main btn--open-reward btn"
           onClick={() => openPledges('#pledge-form-container')}
         >
             Back this project
