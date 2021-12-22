@@ -15,9 +15,10 @@ export default function PledgeDetails({
   setAsActiveProductId,
   product,
   productQuantity,
-  handleAmountSubmission 
+  handleAmountSubmission,
+  initialPedgeInfo 
 }) {
-  const { id, name, price, description } = product;
+  let { id, name, price, description } = product;
   const radioInputRef = useRef();
 
   let detailsClass = 'product'; //default class with base styles.
@@ -101,12 +102,16 @@ export default function PledgeDetails({
         isSelected === true && (
           <PledgeForm
             name={name}
-            price={price}
             onAmountSubmission={handleAmountSubmission}
+            price={price}
+            defaultPledgeAmount={
+              initialPedgeInfo.productId === id
+              ? initialPedgeInfo.amount
+              : price 
+            }
           />
         )
       }
-      
     </div>
   )
 }

@@ -6,9 +6,10 @@ import { useRef } from 'react';
  * @param {number} price - price of the product as the minimum amount to pledge.
  * @callback onAmountSubmission - handle submission of the amount pledge by the user.
  */
-export default function PledgeForm({ name, price, onAmountSubmission }) {
+export default function PledgeForm({ 
+  name, price, defaultPledgeAmount, onAmountSubmission
+}) {
   const inputRef = useRef();
-  price = price === 0 ? 200 : price;
 
   // useEffect(() => {
   //   // inputRef.current.focus();
@@ -31,7 +32,7 @@ export default function PledgeForm({ name, price, onAmountSubmission }) {
               className="pledge-form__amount__input"
               type="number"
               name={name}
-              defaultValue={price}
+              defaultValue={defaultPledgeAmount || price}
               ref={inputRef}
               required
               min={price} // can't pledge an amount less than product's price.

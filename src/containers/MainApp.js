@@ -5,7 +5,7 @@ import Stats from '../components/Stats';
 import About from '../components/About';
 import Products from '../components/Products';
 import Pledges from './Pledges';
-import SuccessMessageModal from '../components/SuccessMessageModal';
+// import SuccessMessageModal from '../components/ConfirmPledge';
 
 import getAsyncData from '../api/getAsyncData';
 /**
@@ -19,7 +19,7 @@ let scrollPositionTop = 0;
 export default function MainApp() {
   const [isLoading, setIsLoading] = useState(true);
   const [showPledges, setShowPledges] = useState(false); // controls toggling of pledge form.
-  const [showSuccessMessage, setShowSuccessMessage] = useState(false); //
+  // const [showSuccessMessage, setShowSuccessMessage] = useState(false); //
   // of overlay and Pledges modal.
 
   // pledges [{productId, amount}]
@@ -77,24 +77,24 @@ export default function MainApp() {
   }
 
   // closeses pledges forms and open success message
-  function openSuccessMessage() {
-    // let prevScrollPosTop = scrollPositionTop
-    // cheat closePledges to maintain position.
-    // scrollPositionTop = window.scrollY;
-    closePledges();
-    setShowSuccessMessage(true);
-    // window.scroll(0, 0);
-    // scrollPositionTop = prevScrollPosTop;
-  }
+  // function openSuccessMessage() {
+  //   // let prevScrollPosTop = scrollPositionTop
+  //   // cheat closePledges to maintain position.
+  //   // scrollPositionTop = window.scrollY;
+  //   closePledges();
+  //   setShowSuccessMessage(true);
+  //   // window.scroll(0, 0);
+  //   // scrollPositionTop = prevScrollPosTop;
+  // }
 
   // close success message modal.
   // Clicking the overlay doesn't close the success message
   // this handle is not passed to the overlay.
-  function closeSuccessMessage() {
-    setShowSuccessMessage(false);
-    // reset scroll position.
-    // window.scroll(0,scrollPositionTop);
-  }
+  // function closeSuccessMessage() {
+  //   setShowSuccessMessage(false);
+  //   // reset scroll position.
+  //   // window.scroll(0,scrollPositionTop);
+  // }
 
   // updating pledge: adding productId and amount. fetch from children.
   function addPledge(pledge) {
@@ -114,7 +114,7 @@ export default function MainApp() {
 
   function handlePledgeSubmission(pledge) {
     addPledge(pledge);
-    openSuccessMessage();
+    // openSuccessMessage();
     subtractProductQuantity(pledge.productId);
   }
 
@@ -152,13 +152,13 @@ export default function MainApp() {
         )
       }
 
-      {
+      {/* {
         showSuccessMessage && (
           <SuccessMessageModal
             closeSuccessMessage={closeSuccessMessage}
           />
         )
-      }
+      } */}
     </>
   );
 }
