@@ -1,6 +1,6 @@
 # Crowdfund: A product crowdfunding page
 
-Crowdfund is a React application used to crowdfund for products. It allows a prospective backer to pledge(s) on products of their choice or donate cash to support the campaign.
+Crowdfund is a React application used to crowdfund for products. It allows a prospective backer to pledge(s) on products of their choice or donate cash to support the product campaign.
 
 This instance of Crowdfund is crowdfunding for the Mastercraft Bamboo Monitor Riser.
 
@@ -14,12 +14,12 @@ This project is a Frontend Mentor Challenge solution.
 
 Users should be able to:
 
-- View the optimal layout depending on their device's screen size
-- See hover states for interactive elements
-- Make a selection of which pledge to make
-- See an updated progress bar and total money raised based on their pledge total after confirming a pledge
-- See the number of total backers increment by one after confirming a pledge
-- Toggle whether or not the product is bookmarked
+- [x] View the optimal layout depending on their device's screen size
+- [x] See hover states for interactive elements
+- [x] Make a selection of which pledge to make
+- [x] See an updated progress bar and total money raised based on their pledge total after confirming a pledge
+- [x] See the number of total backers increment by one after confirming a pledge
+- [x] Toggle whether or not the product is bookmarked
 
 
 ### Screenshot
@@ -28,7 +28,7 @@ Users should be able to:
 
 ### Links
 Hosted by Vercel
-Source on Github
+[Source on Github](https://github.com/b-kip/crowdfundApp)
 
 
 ## My process

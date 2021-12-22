@@ -118,7 +118,7 @@ export default function MainApp() {
     subtractProductQuantity(pledge.productId);
   }
 
-  console.log(isLoading);
+  // console.log(isLoading);
   return (
     <>
       {!isLoading && (<main className="flow-content">
