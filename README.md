@@ -1,5 +1,6 @@
-# Crowdfund: A product crowdfunding page
+<div id="top"></div>
 
+# Crowdfund: A product crowdfunding page
 Crowdfund is a React application used to crowdfund for products. It allows a prospective backer to pledge(s) on products of their choice or donate cash to support the product campaign.
 
 This instance of Crowdfund is crowdfunding for the Mastercraft Bamboo Monitor Riser.
@@ -23,11 +24,13 @@ Users should be able to:
 
 
 ### Screenshot
+![Screenshot of the site](./screenshot.png)
 
-
-
+### Gif
+![Gif](./gif.gif)
 ### Links
 Hosted by Vercel
+<br>
 [Source on Github](https://github.com/b-kip/crowdfundApp)
 
 
@@ -71,10 +74,40 @@ I later converted it to a React Application.
   - store data in a database.
   - Remove side effects from scroll restoration functions.
   - Using hash routing to navigate to the right pledge element and restoring scroll position.
+  - Currency localization.
 
 ### Useful resource
 [Understanding page scrolling when a modal is open](https://css-tricks.com/prevent-page-scrolling-when-a-modal-is-open/)
 
+<!-- GETTING STARTED -->
+## Setup Locally
+
+To get a local copy up and running follow these simple example steps.
+
+### Prerequisites
+
+* npm
+  ```sh
+  npm install npm@latest -g
+  ```
+
+### Installation
+
+1. Clone the repo
+   ```sh
+   git clone https://github.com/your_username_/Project-Name.git
+   ```
+2. Install NPM packages
+   ```sh
+   npm install
+   ```
+4. Start dev server
+   ```sh
+   npm start
+   ```
+
 ## Author
 
 [b-kip](https://github.com/b-kip)
+
+<p align="right">(<a href="#top">back to top</a>)</p>
