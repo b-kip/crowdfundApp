@@ -29,7 +29,7 @@ Users should be able to:
 ### Gif
 ![Gif](./gif.gif)
 ### Links
-Hosted by Vercel
+[Hosted by Netlify](https://crowdfund-app.netlify.app/)
 <br>
 [Source on Github](https://github.com/b-kip/crowdfundApp)
 
